@@ -23,7 +23,6 @@ The steps of the algorithm are as follows:
 The base cases occur when the sublists are either empty or have one element, as these are inherently sorted. 
  '''
 
-
 def quicksort(numbers_in_a_list):
 
 #WRITE YOUR CODE HERE FOR THE RECURSIVE SORTING FUNCTION
