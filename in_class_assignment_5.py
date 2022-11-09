@@ -25,37 +25,35 @@ The base cases occur when the sublists are either empty or have one element, as 
  '''
 
 
-def quicksort(list, low_ind, high_ind):
-    if low_ind < high_ind:
-        partition_index = partition(list, low_ind, high_ind)
-        quicksort(list, low_ind, partition_index - 1)
-        quicksort(list, partition_index + 1, high_ind)
+def quicksort(list, x, y):
+    if x < y:
+        ind = partition(list, x, y)
+        quicksort(list, x, ind - 1)
+        quicksort(list, ind + 1, y)
 
 
-def swap(list, ind_a, ind_b):
-    (list[ind_a], list[ind_b]) = (list[ind_b], list[ind_a])
+def swap(list, a, b):
+    (list[a], list[b]) = (list[b], list[a])
 
 
-def partition(list, low_ind, high_ind):
+def partition(list, x, y):
 
-    pivot = list[high_ind]
+    pivot = list[y]
 
-    partition_ind = low_ind - 1
+    partition_ind = x - 1
 
-    for ind in range(low_ind, high_ind):
+    for ind in range(x, y):
         if list[ind] <= pivot:
 
             partition_ind += 1
             swap(list, partition_ind, ind)
 
-    swap(list, partition_ind + 1, high_ind)
+    swap(list, partition_ind + 1, y)
 
     return partition_ind + 1
 
 
 def main():
-    # WRITE YOUR MAIN FUNCTION HERE TO READ IN YOUR numbers.txt FILE, RUN THE LIST THROUGH YOUR SORTING ALGORITHM,
-    # AND WRITE OUT YOUR FILE
 
     with open('numbers.txt') as f:
         lines = f.read()
