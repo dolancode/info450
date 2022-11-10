@@ -55,6 +55,7 @@ def partition(list, x, y):
 
 def main():
 
+
     with open('numbers.txt') as f:
         lines = f.read()
         res = json.loads(lines)
