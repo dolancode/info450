@@ -5,6 +5,7 @@
 # All 3 files "In_class_assignment_5.py", "numbers.txt", and "sorted.txt" should all be added to your github repository and submitted as a github link.
 
 import json
+import sys
 
 '''Info on Quicksort Algorithm: 
 The Quicksort algorithm is an efficient sorting algorithm developed by British computer scientist Tony Hoare in 1959.
@@ -60,6 +61,10 @@ def main():
         lines = f.read()
         res = json.loads(lines)
         quicksort(res, 0, len(res)-1)
+
+    print()
+    with open('sorted.txt') as f:
+        sys.stdout = f
 
 
 
